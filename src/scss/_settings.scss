@@ -141,7 +141,7 @@ ul {
   font-family: Lexend-SemiBold;
   width: 710px;
   height: 960px;
-  border: 3px solid;
+  // border: 3px solid;
   border-radius: 30px;
   .bread {
     max-width: 700px;
@@ -223,7 +223,6 @@ ul {
     @include flex_between;
     padding-left: 28px;
     padding-right: 68px;
-    background-color: rgb(137, 109, 75);
     span:nth-child(1) {
       font-size: 28px;
     }
@@ -233,13 +232,63 @@ ul {
       }
     }
   }
+  table {
+    overflow-y: scroll;
+    height: 400px;
+    display: grid;
+    min-height: 10vh;
+    font-size: 20px;
+    text-align: left;
+    margin-left: 28px;
+    thead {
+      th {
+        width: 170px;
+        height: 70px;
+        color: rgba(0, 0, 0, 0.491);
+        font-size: 15px;
+        position: sticky;
+      }
+    } 
+    tbody {
+      tr {
+        th {
+          width: 164px;
+          height: 70px;
+          p {
+            line-height: 5px;
+          }
+          p:nth-child(1) {
+            font-size: 17px;
+            color: black;
+          }
+          p:nth-child(2) {
+            font-size: 13px;
+            color: rgba(0, 0, 0, 0.346);
+          }
+        }
+        .Date {
+          font-size: 15px;
+        }
+        .Amount {
+          font-size: 15px;
+          font-weight: bold;
+        }
+        .Status {
+          color: green;
+          font-size: 15px;
+
+        }
+      }
+    }
+
+  }
 }
 
 .pay_info {
   width: 430px;
   height: 960px;
   border-radius: 30px;
-  border: 3px solid;
+  // border: 3px solid;
   font-family: Lexend-Medium;
   flex-wrap: wrap;
   flex-direction: column;
@@ -294,4 +343,55 @@ ul {
 .btn_ligth {
   @include light;
 }
+.transfers {
+  height: 40px;
+  font-size: 27px;
+  margin-left: 30px;
+}
+  table {
+    font-family: Lexend-SemiBold;
+    text-align: left;
+    margin-left: 30px;
+    padding-right: 40px;
+    overflow-y: scroll;
+    height: 250px;
+    display: grid;
+    thead {
+      .right {
+        text-align: right;
+      }
+      th {
+        width: 50%;
+      }
+      th:nth-child(1) {
+        font-size: 15px;
+        color: rgba(0, 0, 0, 0.491);
+      }
+    }
+    tbody {
+      line-height: 10px;
+      .left {
+        text-align: left;
+        width: 60%;
+
+        p:nth-child(1) {
+          font-size: 15px;
+        }
+        p:nth-child(2) {
+          font-size: 13px; 
+          color: rgba(0, 0, 0, 0.558)   
+        }
+      }
+      .right {
+        text-align: right;
+        padding-left: 45px;
+        width: 40%;
+        font-size: 15px;
+
+      }
+      th {
+        margin-left: 30px;
+      }
+    }
+  }
 }
