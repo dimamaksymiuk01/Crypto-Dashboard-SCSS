@@ -26,3 +26,21 @@
     @content;
   }
 }
+@mixin dark {
+  @extend %btn;
+  background-color: $black;
+  color: $white;
+  &:hover {
+    background-color: mix($black, $white, 50%);
+    color: mix($white, $black, 20%);
+  }
+}
+@mixin light {
+  @extend %btn;
+  opacity: 0.7;
+  color: $black;
+  &:hover {
+    background-color: mix($black, $white, 80%);
+    color: mix($white, $black, 80%);
+  }
+}
