@@ -44,79 +44,50 @@
     color: mix($white, $black, 80%);
   }
 }
-
-
-
-@mixin menumax{
-  @media screen and (min-width: 320px) {
-    display: none;
+@mixin liba {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;  
   }
-  @media screen and (min-width: 769px) {
-  .menu {
-    width: 268px;
-    height: 960px;
-    background-color: rgb(23, 23, 23);
-    border-radius: 30px;
-    font-family: "Lexend", sans-serif;
-    .easypay {
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 30px;
-    span {
-      font-size: 25px;
-      padding-left: 8px;
-      font-weight: bold;
-      }
-    }
-    .main_menu {
-      margin-top: 120px;
-      color: white;
-      position: relative;
-      p {
-        margin: 0px 0px 10px 30px;
-      }
-    }
-    li {
-      position: relative;
-      z-index: 5;
-      line-height: 160%;
-      cursor: pointer;
-      list-style: none;
-    }
-    li::before {
-      content: "";
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      background-image: url(..//img/category.svg);
-      background-size: cover;
-      background-position: center center;
-      margin-right: 12px;
-      vertical-align: top;
-    }
-    li:nth-child(1):before {
-      background-image: url(..//img/category.svg);
-    }
-    li:nth-child(2):before {
-      background-image: url(..//img/chart.svg);
-    }
-    li:nth-child(3):before {
-      background-image: url(..//img/send.svg);
-    }
-    li:nth-child(4):before {
-      background-image: url(..//img/plus.svg);
-    }
-    li:nth-child(5):before {
-      background-image: url(..//img/upload.svg);
-    }
-    li:nth-child(6):before {
-      background-image: url(..//img/wallet.svg);
-    }
-    li:nth-child(7):before {
-      background-image: url(..//img/paper.svg);
-    }
+  li:nth-child(1):before {
+    background-image: url(..//img/category.svg);
+  }
+  li:nth-child(2):before {
+    background-image: url(..//img/chart.svg);
+  }
+  li:nth-child(3):before {
+    background-image: url(..//img/send.svg);
+  }
+  li:nth-child(4):before {
+    background-image: url(..//img/plus.svg);
+  }
+  li:nth-child(5):before {
+    background-image: url(..//img/upload.svg);
+  }
+  li:nth-child(6):before {
+    background-image: url(..//img/wallet.svg);
+  }
+  li:nth-child(7):before {
+    background-image: url(..//img/paper.svg);
+  }
+  li {
+    position: relative;
+    z-index: 5;
+    line-height: 160%;
+    cursor: pointer;
+    list-style: none;
+  }
+  li::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url(..//img/category.svg);
+    background-size: cover;
+    background-position: center center;
+    margin-right: 12px;
+    vertical-align: top;
   }
   li::after {
     content: "";
@@ -150,21 +121,89 @@
       opacity: 1;
     }
   }
-  .account {
-    margin-top: 210px; //350px
-    font-size: 20px;
-    color: white;
-    li:nth-child(1):before {
-      background-image: url(..//img/profile.svg);
-    }
-    li:nth-child(2):before {
-      background-image: url(..//img/setting.svg);
-    }
+}
+@mixin libat {
+  li:nth-child(8):before {
+    background-image: url(..//img/profile.svg);
   }
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+  li:nth-child(9):before {
+    background-image: url(..//img/setting.svg);
   }
 }
+
+@mixin menuadaptive{
+  @media screen and (min-width: 320px) {
+    display: none;
+  }
+  @media screen and (min-width: 978px) {
+    display: block;
+  }
+}
+@mixin breadadaprive {
+  @media screen and (min-width: 375px) {
+    .bread {
+      text-align: center;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    .chicken {
+      text-align: left;
+      min-width: 50%;
+        line-height: 5px;
+      p:nth-child(1) {
+          margin-left: 25px;
+          font-size: 25px;
+          font-weight: bold;
+        }
+        p:nth-child(2) {
+          margin-left: 27px;
+          font-size: 15px;
+          color: rgba(0, 0, 0, 0.499);
+        }
+      }
+      .potato {
+        min-width: 50%;
+        height: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        input {
+          border: 3px solid;
+          border-color: white;
+          background-color: rgb(243, 237, 237);
+        }
+        @media screen and (max-width: 470px) {
+          img {
+            display: none;
+          }
+        }
+      }
+    }  
+  }
+}
+@mixin balanceadaptive {
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    overflow-y: scroll;
+    text-align: end;
+  }
+  margin-top: 90px;
+  p {
+    line-height: 38px;
+    margin-left: 30px;
+    width: 100%;
+    text-align: left;
+    @media screen and (max-width: 425px) {
+      text-align: center;
+      }
+  }
+}
+@mixin paypad{
+  @media screen and (max-width: 769px) {
+    padding-top: 100px;
+    }
 }
